@@ -1,0 +1,8 @@
+c_macro_tokens.e
+c_macro_scanner.e
+c_macro_parser.txt
+c_macro_parser.e
+ewg_c_macro_parser.e
+ewg_c_macro_parser.txt
+ewg_c_macro_scanner.e
+ewg_c_macro_tokens.e
