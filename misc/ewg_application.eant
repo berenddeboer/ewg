@@ -28,14 +28,12 @@
   </target>
 
   <target name="init_windows" if="${GOBO_OS}=windows">
-    <set name="exe" value=".exe"/>
     <set name="ewg.obj" value=".obj"/>
     <set name="ewg.lib" value=".lib"/>
     <set name="cc" value="msc" unless="${cc}"/>
   </target>
 
   <target name="init_unix" unless="${GOBO_OS}=windows">
-    <set name="exe" value=""/>
     <set name="ewg.obj" value=".o"/>
     <set name="ewg.lib" value=".a"/>
     <set name="cc" value="gcc" unless="${cc}"/>
@@ -77,13 +75,8 @@
     <geant target="tags"/>
   </target>
   
-  <target name="tags_ve" depend="init">
-    <set name="eiffel" value="ve"/>
-    <geant target="tags"/>
-  </target>
-  
-  <target name="tags_se" depend="init">
-    <set name="eiffel" value="se"/>
+  <target name="tags_ge" depend="init">
+    <set name="eiffel" value="ge"/>
     <geant target="tags"/>
   </target>
   
@@ -93,9 +86,6 @@
     <set name="define" value="${define} GOBO_CC=${GOBO_CC}" if="${GOBO_CC}"/>
     <set name="define" value="${define} GOBO_XML_EXPAT=true" if="${GOBO_XML_EXPAT}"/>
     <set name="define" value="${define} GOBO_DOTNET=true" if="${GOBO_DOTNET}"/>
-    <set name="define" value="${define} SE_1_0=true" if="${SE_1_0}"/>
-    <set name="define" value="${define} VE_4_1=true" if="${VE_4_1}"/>
-    <set name="void" value="--void" if="${eiffel}=ve"/>
     <exec executable="gutentag ${void} --define=&quot;${define}&quot;"/>
   </target>
 

@@ -26,13 +26,12 @@
     <echo message="   geant install"/>
     <echo message="   geant c_build_library"/>
     <echo message="   geant c_build_library_all"/>
-    <echo message="   geant c_build_library_se"/>
+    <echo message="   geant c_build_library_ge"/>
     <echo message="   geant c_build_library_ise"/>
-    <echo message="   geant c_build_library_ve"/>
     <echo message="   geant clean"/>
     <echo message="   geant clobber"/>
     <echo message=""/>
-    <echo message="$${GOBO_EIFFEL} ... Eiffel Compiler (se|ise|ve)"/>
+    <echo message="$${GOBO_EIFFEL} ... Eiffel Compiler (ge|ise)"/>
     <echo message="$${GOBO_CC}     ... C Compiler (gcc|bcb|msc|lcc)"/>
   </target>
 
@@ -46,28 +45,23 @@
     <mkdir directory="${ewg.wrapper_dir}/eiffel/external/struct"/>
     <mkdir directory="${ewg.wrapper_dir}/eiffel/external/struct/spec/"/>
     <mkdir directory="${ewg.wrapper_dir}/eiffel/external/struct/spec/ise"/>
-    <mkdir directory="${ewg.wrapper_dir}/eiffel/external/struct/spec/ve"/>
-    <mkdir directory="${ewg.wrapper_dir}/eiffel/external/struct/spec/se"/>
+    <mkdir directory="${ewg.wrapper_dir}/eiffel/external/struct/spec/ge"/>
     <mkdir directory="${ewg.wrapper_dir}/eiffel/external/union"/>
     <mkdir directory="${ewg.wrapper_dir}/eiffel/external/union/spec/"/>
     <mkdir directory="${ewg.wrapper_dir}/eiffel/external/union/spec/ise"/>
-    <mkdir directory="${ewg.wrapper_dir}/eiffel/external/union/spec/ve"/>
-    <mkdir directory="${ewg.wrapper_dir}/eiffel/external/union/spec/se"/>
+    <mkdir directory="${ewg.wrapper_dir}/eiffel/external/union/spec/ge"/>
     <mkdir directory="${ewg.wrapper_dir}/eiffel/external/enum"/>
     <mkdir directory="${ewg.wrapper_dir}/eiffel/external/enum/spec"/>
     <mkdir directory="${ewg.wrapper_dir}/eiffel/external/enum/spec/ise"/>
-    <mkdir directory="${ewg.wrapper_dir}/eiffel/external/enum/spec/ve"/>
-    <mkdir directory="${ewg.wrapper_dir}/eiffel/external/enum/spec/se"/>
+    <mkdir directory="${ewg.wrapper_dir}/eiffel/external/enum/spec/ge"/>
     <mkdir directory="${ewg.wrapper_dir}/eiffel/external/function"/>
     <mkdir directory="${ewg.wrapper_dir}/eiffel/external/function/spec"/>
     <mkdir directory="${ewg.wrapper_dir}/eiffel/external/function/spec/ise"/>
-    <mkdir directory="${ewg.wrapper_dir}/eiffel/external/function/spec/ve"/>
-    <mkdir directory="${ewg.wrapper_dir}/eiffel/external/function/spec/se"/>
+    <mkdir directory="${ewg.wrapper_dir}/eiffel/external/function/spec/ge"/>
     <mkdir directory="${ewg.wrapper_dir}/eiffel/external/callback"/>
     <mkdir directory="${ewg.wrapper_dir}/eiffel/external/callback/spec"/>
     <mkdir directory="${ewg.wrapper_dir}/eiffel/external/callback/spec/ise"/>
-    <mkdir directory="${ewg.wrapper_dir}/eiffel/external/callback/spec/ve"/>
-    <mkdir directory="${ewg.wrapper_dir}/eiffel/external/callback/spec/se"/>
+    <mkdir directory="${ewg.wrapper_dir}/eiffel/external/callback/spec/ge"/>
     <mkdir directory="${ewg.wrapper_dir}/eiffel/abstraction"/>
     <mkdir directory="${ewg.wrapper_dir}/eiffel/abstraction/struct"/>
     <mkdir directory="${ewg.wrapper_dir}/eiffel/abstraction/union"/>
@@ -97,9 +91,8 @@
     <copy to_directory="${ewg.wrapper_dir}/c/" dir="${EWG}/library/runtime/c">
       <fileset include="@(**/*.c|**/*.h)"/>
     </copy>
-    <!-- TODO: As soon as GOBO > 3.0 is released, copy only if "${system_dir}/manual_wrapper/c" exists -->
-    <!-- Use <available> to implmement it -->
-    <copy to_directory="${ewg.wrapper_dir}/c" dir="${system_dir}/manual_wrapper/c">
+    <available resource="${system_dir}/manual_wrapper/c" variable="manual_wrapper_available"/>
+    <copy to_directory="${ewg.wrapper_dir}/c" dir="${system_dir}/manual_wrapper/c" if="${manual_wrapper_available}">
       <fileset include="@(**/*)"/>
     </copy>
   </target>

@@ -34,7 +34,6 @@
 			Remove intermediary generated files.
 		</description>
 
-		<ve clean="tools" recursive="true"/>
 		<geant file="build.eant" target="clean" dir="runtime/eiffel"/>
 	</target>
 

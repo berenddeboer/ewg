@@ -23,12 +23,11 @@
 
   <target name="init_system">
     <set name="system" value="drc"/>
-    <set name="system_dir" value="${EWG}/src/drc/"/>
+    <set name="system_dir" value="${EWG}/src/drc"/>
   </target>
 
   <target name="clean" depend="init">
     <delete file="TAGS"/>
-    <delete file="cecil.se"/>
     <delete file="cecil.h"/>
     <precursor/>
   </target>
@@ -40,9 +39,6 @@
     <set name="define" value="${define} GOBO_CC=${GOBO_CC}" if="${GOBO_CC}"/>
     <set name="define" value="${define} GOBO_XML_EXPAT=true" if="${GOBO_XML_EXPAT}"/>
     <set name="define" value="${define} GOBO_DOTNET=true" if="${GOBO_DOTNET}"/>
-    <set name="define" value="${define} SE_1_0=true" if="${SE_1_0}"/>
-    <set name="define" value="${define} VE_4_1=true" if="${VE_4_1}"/>
-    <set name="void" value="--void" if="${eiffel}=ve"/>
     <exec executable="gutentag ${void} --define=&quot;${define}&quot;"/>
   </target>
 

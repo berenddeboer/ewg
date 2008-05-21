@@ -14,14 +14,13 @@
     <description>
       Generate Eiffel files to directory '${spec_dir}/[compiler]'
       from '${gepp_dir}', where [compiler] is
-      'ise', 'se' and 've'. Create spec directories
+      'ise' or 'ge'. Create spec directories
       if necessary.
     </description>
 
 
     <geant target="ge2e_dir_ise"/>
-    <geant target="ge2e_dir_se"/>
-    <geant target="ge2e_dir_ve"/>
+    <geant target="ge2e_dir_ge"/>
   </target>
 
   <!-- Implementation -->
@@ -42,30 +41,15 @@
     </gepp>
   </target>
 
-  <target name="ge2e_dir_se" dir="${gepp_dir}">
+  <target name="ge2e_dir_ge" dir="${gepp_dir}">
     <description>
-      Generate Eiffel files to directory '${spec_dir}/se'
+      Generate Eiffel files to directory '${spec_dir}/ge'
       from '${gepp_dir}'.
       Create spec directories if necessary.
     </description>
     <gepp lines="true">
-      <define name="SE"/>
-      <define name="SE_0_74" if="${SE_0_74}"/>
-      <fileset include="@(**/*.ge)" mapped_filename_directory="${spec_dir}/se">
-	 <map type="glob" from="*.ge" to="*.e"/>
-      </fileset>
-    </gepp>
-  </target>
-
-  <target name="ge2e_dir_ve" dir="${gepp_dir}">
-    <description>
-      Generate Eiffel files to directory '${spec_dir}/ve'
-      from '${gepp_dir}'.
-      Create spec directories if necessary.
-    </description>
-    <gepp lines="true">
-      <define name="VE"/>
-      <fileset include="@(**/*.ge)" mapped_filename_directory="${spec_dir}/ve">
+      <define name="GE"/>
+      <fileset include="@(**/*.ge)" mapped_filename_directory="${spec_dir}/ge">
 	 <map type="glob" from="*.ge" to="*.e"/>
       </fileset>
     </gepp>
