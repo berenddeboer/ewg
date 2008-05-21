@@ -27,14 +27,12 @@
   </target>
 
   <target name="init_windows" if="${GOBO_OS}=windows">
-    <set name="exe" value=".exe"/>
     <set name="ewg.obj" value=".obj"/>
     <set name="ewg.lib" value=".lib"/>
     <set name="cc" value="msc" unless="${cc}"/>
   </target>
 
   <target name="init_unix" unless="${GOBO_OS}=windows">
-    <set name="exe" value=""/>
     <set name="ewg.obj" value=".o"/>
     <set name="ewg.lib" value=".a"/>
     <set name="cc" value="gcc" unless="${cc}"/>

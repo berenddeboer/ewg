@@ -14,20 +14,17 @@
     <echo message="usage:"/>
 
     <echo message="   geant c_preprocess"/>
-    <echo message="   geant c_preprocess_se"/>
+    <echo message="   geant c_preprocess_ge"/>
     <echo message="   geant c_preprocess_ise"/>
-    <echo message="   geant c_preprocess_ve"/>
     <echo message="   geant c_compile"/>
-    <echo message="   geant c_compile_se"/>
+    <echo message="   geant c_compile_ge"/>
     <echo message="   geant c_compile_ise"/>
-    <echo message="   geant c_compile_ve"/>
     <echo message="   geant c_build_library"/>
     <echo message="   geant c_build_library_all"/>
-    <echo message="   geant c_build_library_se"/>
+    <echo message="   geant c_build_library_ge"/>
     <echo message="   geant c_build_library_ise"/>
-    <echo message="   geant c_build_library_ve"/>
     <echo message=""/>
-    <echo message="$${GOBO_EIFFEL} ... Eiffel Compiler (se|ise|ve)"/>
+    <echo message="$${GOBO_EIFFEL} ... Eiffel Compiler (ge|ise)"/>
     <echo message="$${GOBO_CC}     ... C Compiler (gcc|bcb|msc|lcc)"/>
   </target>
 
@@ -70,18 +67,13 @@
     <exec executable="${bcb.cpp} -P- -o${ewg.cpp_header_name} ${ewg.c_compile.options.default} ${ewg.c_compile.options} ${ewg.full_header_name}" dir="${system_dir}"/>
   </target>
 
-  <target name="c_compile_se" depend="init">
-    <set name="eiffel" value="se"/>
+  <target name="c_compile_ge" depend="init">
+    <set name="eiffel" value="ge"/>
     <geant target="c_compile"/>
   </target>
 
   <target name="c_compile_ise" depend="init">
     <set name="eiffel" value="ise"/>
-    <geant target="c_compile"/>
-  </target>
-
-  <target name="c_compile_ve" depend="init">
-    <set name="eiffel" value="ve"/>
     <geant target="c_compile"/>
   </target>
 
@@ -137,23 +129,17 @@
   </target>
 
   <target name="c_build_library_all">
-    <geant target="c_build_library_se"/>
+    <geant target="c_build_library_ge"/>
     <geant target="c_build_library_ise"/>
-    <geant target="c_build_library_ve"/>
   </target>
 
-  <target name="c_build_library_se" depend="init">
-    <set name="eiffel" value="se"/>
+  <target name="c_build_library_ge" depend="init">
+    <set name="eiffel" value="ge"/>
     <geant target="c_build_library"/>
   </target>
 
   <target name="c_build_library_ise" depend="init">
     <set name="eiffel" value="ise"/>
-    <geant target="c_build_library"/>
-  </target>
-
-  <target name="c_build_library_ve" depend="init">
-    <set name="eiffel" value="ve"/>
     <geant target="c_build_library"/>
   </target>
 
@@ -248,7 +234,6 @@
   </target>
 
   <target name="init_windows" if="${GOBO_OS}=windows">
-    <set name="exe" value=".exe"/>
     <set name="ewg.obj" value=".obj"/>
     <set name="ewg.lib" value=".lib"/>
 
@@ -263,7 +248,6 @@
   </target>
 
   <target name="init_unix" unless="${GOBO_OS}=windows">
-    <set name="exe" value=""/>
     <set name="ewg.obj" value=".o"/>
     <set name="ewg.lib" value=".a"/>
     <set name="cc" value="gcc" unless="${cc}"/>
@@ -277,12 +261,10 @@
   </target>
 
   <target name="set_default_options_windows" if="${GOBO_OS}=windows">
-    <set name="ewg.c_compile.options.default" value="${ewg.c_compile.options.default} /I${VE_Bin}" if="${eiffel}=ve"/>
     <set name="ewg.c_compile.options.default" value="${ewg.c_compile.options.default} /I${ISE_EIFFEL}\studio\spec\windows\include" if="${eiffel}=ise"/>
   </target>
 
   <target name="set_default_options_unix" unless="${GOBO_OS}=windows">
-    <set name="ewg.c_compile.options.default" value="${ewg.c_compile.options.default} -I${VE_Bin}" if="${eiffel}=ve"/>
     <set name="ewg.c_compile.options.default" value="${ewg.c_compile.options.default} -I${ISE_EIFFEL}/studio/spec/$ISE_PLATFORM/include" if="${eiffel}=ise"/>
   </target>
 

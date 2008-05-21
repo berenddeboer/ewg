@@ -27,8 +27,6 @@ revision: "$Revision$"
 
   <title>Building the tools</title>
 
-  <title>Building the Tools</title>
-
   <para>
     EWG (the package) contains two tools:
   </para>
@@ -60,15 +58,14 @@ revision: "$Revision$"
       <listitem>
 	 <para>Library</para>
 	 <itemizedlist>
-	   <listitem><para>GOBO 3.4</para></listitem>
+	   <listitem><para>GOBO 3.8 or later (earlier versions back to 3.4 may work)</para></listitem>
 	 </itemizedlist>
       </listitem>
       <listitem>
 	 <para>Compiler</para>
 	 <itemizedlist>
-	   <listitem><para>Smart Eiffel (1.1)</para></listitem>
-	   <listitem><para>ISE Eiffel (5.6)</para></listitem>
-	   <listitem><para>Visual Eiffel (4.1)</para></listitem>
+	   <listitem><para>ISE Eiffel (any version supported by your version of Gobo)</para></listitem>
+	   <listitem><para>or Gobo Eiffel Compiler (shipped with Gobo)</para></listitem>
 	 </itemizedlist>
       </listitem>
       <listitem>

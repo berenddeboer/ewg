@@ -5,7 +5,7 @@ description:
 
 "Installation"
 
-copyright: "Copyright (c) 2004-2005, Andreas Leitner and others"
+copyright: "Copyright (c) 2004-2008, Andreas Leitner and others"
 license: "Eiffel Forum License v2 (see forum.txt)"
 date: "$Date$"
 revision: "$Revision$"
@@ -15,7 +15,7 @@ revision: "$Revision$"
 <chapter xmlns="http://www.gobosoft.com/eiffel/gobo/documentation" id="ewg/installation">
   <chapterinfo>
     <copyright>
-      <year>2004-2005</year>
+      <year>2004-2008</year>
       <holder>Andreas Leitner</holder>
     </copyright>
     <author>
@@ -39,8 +39,8 @@ revision: "$Revision$"
       </listitem>
       <listitem>
 	 <para>
-	   CVS -- 
-	   <ulink url="http://sourceforge.net/cvs/?group_id=71069">
+	   Subversion -- 
+	   <ulink url="http://sourceforge.net/svn/?group_id=71069">
 	     http://sourceforge.net/cvs/?group_id=71069
 	   </ulink>
 	 </para>
@@ -68,7 +68,7 @@ revision: "$Revision$"
       <listitem>
 	 <para>
 	   Set the environment variable <literal>${EWG}</literal> to the directory where you
-	   unpacked the EWG tar ball to or where you retrieved the CVS version to
+	   unpacked the EWG tar ball to or where you retrieved the Subversion version to
 	 </para>
       </listitem>
       <listitem>
@@ -82,7 +82,7 @@ revision: "$Revision$"
 	   This compiler will then be used to generate wrappers for. The following is a list
 	   of supported values:
 	   <itemizedlist>
-	     <listitem><para>se</para></listitem>
+	     <listitem><para>ge (doesn't yet work)</para></listitem>
 	     <listitem><para>ise</para></listitem>
 	   </itemizedlist>
 	 </para>
@@ -114,7 +114,7 @@ revision: "$Revision$"
       <programlisting>
 	 set EWG=C:\ewg
 	 set PATH=%PATH%;%EWG%\bin
-	 set GOBO_EIFFEL=se
+	 set GOBO_EIFFEL=ise
 	 set GOBO_CC=msc
       </programlisting>
     </informalexample>
@@ -125,8 +125,8 @@ revision: "$Revision$"
     <informalexample>
       <programlisting>
 	 export EWG=/home/aleitner/ewg
-	 export PATH=$PATH:$EWG\bin
-	 export GOBO_EIFFEL=ise
+	 export PATH=$PATH:$EWG/bin
+	 export GOBO_EIFFEL=ge
 	 export GOBO_CC=gcc
       </programlisting>
     </informalexample>
@@ -137,9 +137,9 @@ revision: "$Revision$"
       <literal>PATH</literal> environment variable. For
       <literal>Visual C</literal>, there is usually a special
       command line window you can open, that automatically has
-      everything necessary set. <literal>ISE Eiffel</literal> and
-      <literal>SmartEiffel</literal> have to be added to
-      <literal>PATH</literal> by hand. <literal>GCC</literal> can (at
+      everything necessary set. <literal>ISE Eiffel</literal> has to be added to
+      <literal>PATH</literal> by hand (<literal>gec</literal> will probably already
+      be in your path). <literal>GCC</literal> can (at
       least on Unix like systems) usually be located via
       <literal>PATH</literal> by default. If in doubt consult the
       corresponding tool documentation. 

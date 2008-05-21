@@ -5,7 +5,7 @@ description:
 
 "Using the examples"
 
-copyright: "Copyright (c) 2004-2005, Andreas Leitner and others"
+copyright: "Copyright (c) 2004-2008, Andreas Leitner and others"
 license: "Eiffel Forum License v2 (see forum.txt)"
 date: "$Date$"
 revision: "$Revision$"
@@ -15,7 +15,7 @@ revision: "$Revision$"
 <chapter xmlns="http://www.gobosoft.com/eiffel/gobo/documentation" id="ewg/using_the_examples">
   <chapterinfo>
     <copyright>
-      <year>2004-2005</year>
+      <year>2004-2008</year>
       <holder>Andreas Leitner</holder>
     </copyright>
     <author>
@@ -26,8 +26,6 @@ revision: "$Revision$"
   </chapterinfo>
 
   <title>Using the examples</title>
-
-  <title>Using the Examples</title>
 
   <para>
     EWG comes with the following examples
@@ -76,15 +74,14 @@ revision: "$Revision$"
       <listitem>
 	 <para>Library</para>
 	 <itemizedlist>
-	   <listitem><para>GOBO (3.4) -- (you just need geant and gexace)</para></listitem>
+	   <listitem><para>GOBO (3.8) -- (you just need geant and gexace, and perhaps gec)</para></listitem>
 	 </itemizedlist>
       </listitem>
       <listitem>
 	 <para>Compiler</para>
 	 <itemizedlist>
-	   <listitem><para>Smart Eiffel (1.1)</para></listitem>
-	   <listitem><para>ISE Eiffel (5.6)</para></listitem>
-	   <listitem><para>Visual Eiffel (4.1)</para></listitem>
+	   <listitem><para>ISE Eiffel or</para></listitem>
+	   <listitem><para>Gobo Eiffel Compiler</para></listitem>
 	 </itemizedlist>
       </listitem>
       <listitem>
@@ -102,13 +99,6 @@ revision: "$Revision$"
       </para>
     </note>      
 
-    <note>
-      <para>
-	 Support for Visual Eiffel on Windows is currently not fully supported, because I only have the free version of Visual Eiffel.
-	 This version refuses to compile the bigger examples like OpenGL and GTK 2.x, thus I cannot test them.
-      </para>
-    </note>      
-
     <para>
       The examples provided with EWG have been tested using the following combinations:
     </para>
@@ -123,7 +113,7 @@ revision: "$Revision$"
     </itemizedlist>
 
     <para>
-      Other combinations might or might not work.
+      Note that most of the above are no longer supported by Gobo. Other combinations might or might not work.
       If you test another combination I would be happy to hear from your results.
     </para>
   </section>

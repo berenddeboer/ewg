@@ -5,7 +5,7 @@ description:
 
 "Understanding Ewg"
 
-copyright: "Copyright (c) 2004-2005, Andreas Leitner and others"
+copyright: "Copyright (c) 2004-2008, Andreas Leitner and others"
 license: "Eiffel Forum License v2 (see forum.txt)"
 date: "$Date$"
 revision: "$Revision$"
@@ -15,7 +15,7 @@ revision: "$Revision$"
 <chapter xmlns="http://www.gobosoft.com/eiffel/gobo/documentation" id="ewg/understanding_ewg">
   <chapterinfo>
     <copyright>
-      <year>2004-2005</year>
+      <year>2004-2008</year>
       <holder>Andreas Leitner</holder>
     </copyright>
     <author>

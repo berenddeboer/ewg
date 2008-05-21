@@ -63,7 +63,6 @@
 		</description>
 
 		<geant target="remove_backup_files"/>
-		<geant target="remove_ve_project_files"/>
 		<geant file="${EWG}/src/build.eant" target="clobber" dir="src"/>
 		<geant file="${EWG}/src/build.eant" target="clobber" dir="bin"/>
 		<geant file="${EWG}/test/build.eant" target="clobber" dir="test"/>
@@ -78,17 +77,6 @@
 		</description>
 		<delete>
 			<fileset directory="." include="**/*~"/>
-		</delete>
-	</target>
-
-	<target name="remove_ve_project_files" depend="init">
-		<description>
-			Remove project files made by ve.
-		</description>
-			  <exec executable="find . -type d -name eProject | xargs -n 1 rm -rf" unless="${GOBO_OS}=windows"/>
-			  <exec executable="find . -type d -name eCluster | xargs -n 1 rm -rf" unless="${GOBO_OS}=windows"/>
-		<delete>
-			<fileset directory="." include="**/*.xcp"/>
 		</delete>
 	</target>
 
@@ -113,25 +101,11 @@
 <!-- Implementation -->
 
 	<target name="init">
-		<geant target="init_os"/>
-	</target>
-
-	<target name="init_os">
-		<geant target="init_windows"/>
-		<geant target="init_unix"/>
 		<geant target="init_gobo_eiffel"/>
 	</target>
 
-	<target name="init_windows" if="${GOBO_OS}=windows">
-		<set name="exe" value=".exe"/>
-	</target>
-
-	<target name="init_unix" unless="${GOBO_OS}=windows">
-		<set name="exe" value=""/>
-	</target>
-
 	<target name="init_gobo_eiffel" unless="${GOBO_EIFFEL}">
-		<set name="GOBO_EIFFEL" value="se"/>
+		<set name="GOBO_EIFFEL" value="ge"/>
 	</target>
 
 </project>
