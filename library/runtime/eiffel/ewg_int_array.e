@@ -25,7 +25,7 @@ create
 
 feature {ANY} -- Access
 
-	item (i: INTEGER): INTEGER is
+	item alias "[]" (i: INTEGER): INTEGER assign put is
 			-- Return the address of the `i'-th item
 		require
 			exists: exists
